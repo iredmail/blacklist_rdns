@@ -14,7 +14,7 @@ strings attached.
 
 * Download the `blacklist_rdns.pcre` in `/etc/postfix/`.
 * Update `smtpd_client_restrictions =` in `/etc/postfix/main.cf`, include this
-  file:
+  file like below:
 
 ```
 smtpd_client_restrictions =
@@ -23,6 +23,8 @@ smtpd_client_restrictions =
     check_client_access pcre:/etc/postfix/blacklist_rdns.pcre
     ...
 ```
+
+Make sure the `check_client_access` rule is after `permit_sasl_authenticated`.
 
 # Additional Patterns
 
