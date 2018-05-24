@@ -22,9 +22,12 @@
 /:/      DUNNO
 /^([0-9]{1,3}\.){3}[0-9]{1,3}$/         DUNNO
 
+# Amazon EC2 instance
+/^ec2-\d{1,3}-\d{1,3}-\d{1,3}-\d{1-3}\.compute-\d\.amazonaws\.com$/ DUNNO
+
 #+++++ dynamic.regexp +++++
-if /[0-9]{4}|[0-9]+[^0-9]+[0-9]+|dhcp|dynamic|pppoe|wireless/
-if /^doc|cable|dhcp|dial|din|dsl|dyn|pool|ppp|wireless/
+#if /[0-9]{4}|[0-9]+[^0-9]+[0-9]+|dhcp|dynamic|pppoe|wireless/
+#if /^doc|cable|dhcp|dial|din|dsl|dyn|pool|ppp|wireless/
 
 #
 # Vietnam
@@ -686,8 +689,8 @@ if /^doc|cable|dhcp|dial|din|dsl|dyn|pool|ppp|wireless/
 /^dyn\.([12]?[0-9]{1,2}-){3}[0-9]{3}\.dsl\.vtx\.ch$/ REJECT Dynamic - Please relay via ISP (vtx.ch)
 /^ip[12]?[0-9]{1,2}\.dyn[1-9]?\.[a-z]{3,10}[0-9]?\.schedom-europe\.net$/ REJECT Dynamic - Please relay via ISP (schedom-europe.net)
 /^(\d{1,3}-){4}adsl-dyn\.4u\.com\.gh$/ REJECT  Dynamic - Please relay via ISP (4u.com.gh)
-endif
-endif
+#endif
+#endif
 
 /^host([12]?[0-9]{1,2}\.){4}conversent\.net$/ REJECT Generic - Please relay via ISP (conversent.net)
 /^[12]?[0-9]{1,2}(-[12]?[0-9]{1,2}){2}\elekta\.lt$/ REJECT Generic - Please relay via ISP (elekta.lt)
@@ -718,7 +721,7 @@ endif
 /\.localdomain$/  REJECT Generic - Please relay via ISP
 /\.setup$/   REJECT Generic - Please relay via ISP
 /[a-z-][0-9]+$/   REJECT Generic - Please relay via ISP
-if /cable|dsl|[0-9a-f]{4}|[0-9][^0-9]+[0-9]/
+#if /cable|dsl|[0-9a-f]{4}|[0-9][^0-9]+[0-9]/
 /^cust-.+\.adsl\.scarlet\.nl$/                  REJECT  Generic - Please relay via ISP (scarlet.nl)
 /^([12]?[0-9]{1,2}\.){3}[12]?[0-9]{1,2}\.cable\.012\.net\.il$/ REJECT Generic - Please relay via ISP (012.net.il)
 /^([12]?[0-9]{1,2}\.){4}adsl\.012\.net\.il$/ REJECT Generic - Please relay via ISP (012.net.il)
@@ -1641,4 +1644,4 @@ if /cable|dsl|[0-9a-f]{4}|[0-9][^0-9]+[0-9]/
 /^cable-cgn\.\d+\.mtel\.me$/ REJECT Dynamic - Please relay via ISP (mtel.me)
 /^adsl-new\d+-\d+\.crnagora\.net$/ REJECT Dynamic - Please relay via ISP
 /^hn\.kd\.dhcp$/ REJECT Dynamic - Please relay via ISP (kd.dhcp)
-endif
+#endif
