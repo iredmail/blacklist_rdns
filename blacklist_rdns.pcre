@@ -22,9 +22,6 @@
 /:/      DUNNO
 /^([0-9]{1,3}\.){3}[0-9]{1,3}$/         DUNNO
 
-# Amazon EC2 instance
-/^ec2-\d{1,3}-\d{1,3}-\d{1,3}-\d{1-3}\.compute-\d\.amazonaws\.com$/ DUNNO
-
 #+++++ dynamic.regexp +++++
 #if /[0-9]{4}|[0-9]+[^0-9]+[0-9]+|dhcp|dynamic|pppoe|wireless/
 #if /^doc|cable|dhcp|dial|din|dsl|dyn|pool|ppp|wireless/
@@ -569,6 +566,7 @@
 /^ic-dinamica(-[12]?[0-9]{1,2}){4}\.intercable\.net\.co$/ REJECT Dynamic - Please relay via ISP (intercable.net.co)
 /^[12]?[0-9]{1,2}(-[12]?[0-9]{1,2}){3}\.dhcp-ripwave\.irishbroadband\.ie$/ REJECT Dynamic - Please relay via ISP (irishbroadband.ie)
 /^[12]?[0-9]{1,2}(-[12]?[0-9]{1,2}){3}-[a-z]{2,5}-[a-z]{2,5}-[0-9]\.dynamic\.isadsl\.co\.za$/ REJECT Dynamic - Please relay via ISP (isadsl.co.za)
+/\.adsl\.co\.za$/ REJECT Dynamic - Please relay via ISP (adsl.co.za)
 /\.dynamic\.jazztel\.es$/  REJECT Dynamic - Please relay via ISP (jazztel.es)
 /-xdsl-dynamic\.kuzbass\.net$/  REJECT Dynamic - Please relay via ISP (kuzbass.net)
 /^dialup-([12]?[0-9]{1,2}\.){4}dial1\.detroit1\.level3\.net$/ REJECT Dynamic - Please relay via ISP (level3.net)
@@ -1649,3 +1647,4 @@
 /^ip\d{1,3}\.ip-\d{1,3}-\d{1,3}-\d{1,3}\.eu$/ REJECT Dynamic - Please relay via ISP (dynamic ip eu)
 /\.unknown\.vectranet\.pl$/ REJECT Dynamic - Please relay via ISP (unknown.vectranet.pl)
 /^client-\d{1,3}-\d{1,3}-\d{1,3}-\d{1,3}\.hostwindsdns\.com$/ REJECT Dynamic - Please relay via ISP (hostwindsdns.com)
+/\.mysmtp\d*\.[com|mobi|email]$/ REJECT Generic - bad reputation (mysmtp)
