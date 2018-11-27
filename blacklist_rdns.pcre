@@ -687,8 +687,12 @@
 /^dyn\.([12]?[0-9]{1,2}-){3}[0-9]{3}\.dsl\.vtx\.ch$/ REJECT Dynamic - Please relay via ISP (vtx.ch)
 /^ip[12]?[0-9]{1,2}\.dyn[1-9]?\.[a-z]{3,10}[0-9]?\.schedom-europe\.net$/ REJECT Dynamic - Please relay via ISP (schedom-europe.net)
 /^(\d{1,3}-){4}adsl-dyn\.4u\.com\.gh$/ REJECT  Dynamic - Please relay via ISP (4u.com.gh)
-#endif
-#endif
+
+#
+# Argentina
+#
+/^\d{1,3})-\d{1,3}-\d{1,3}-\d{1,3}\.mrse\.com\.ar$/   REJECT  Dynamic - Please relay via ISP (mrse.com.ar)
+
 
 /^host([12]?[0-9]{1,2}\.){4}conversent\.net$/ REJECT Generic - Please relay via ISP (conversent.net)
 /^[12]?[0-9]{1,2}(-[12]?[0-9]{1,2}){2}\elekta\.lt$/ REJECT Generic - Please relay via ISP (elekta.lt)
@@ -1647,4 +1651,8 @@
 /^ip\d{1,3}\.ip-\d{1,3}-\d{1,3}-\d{1,3}\.eu$/ REJECT Dynamic - Please relay via ISP (dynamic ip eu)
 /\.unknown\.vectranet\.pl$/ REJECT Dynamic - Please relay via ISP (unknown.vectranet.pl)
 /^client-\d{1,3}-\d{1,3}-\d{1,3}-\d{1,3}\.hostwindsdns\.com$/ REJECT Dynamic - Please relay via ISP (hostwindsdns.com)
-/\.mysmtp\d*\.[com|mobi|email]$/ REJECT Generic - bad reputation (mysmtp)
+/(\.mysmtp\.com)$/ REJECT Bad reputation (mysmtp)
+/(\.mysmtp\.email)$/ REJECT Bad reputation (mysmtp)
+/(\.mysmtp\.mobi)$/ REJECT Bad reputation (mysmtp)
+/(\.mysmtp\d+\.com)$/ REJECT Bad reputation (mysmtp)
+/^\d{1,3}\.ip-\d{1,3}-\d{1,3}-\d{1,3}\.eu$/ REJECT Dynamic - Please relay via ISP (.eu)
