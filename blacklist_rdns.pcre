@@ -1655,4 +1655,4 @@
 /(\.mysmtp\.email)$/ REJECT Bad reputation (mysmtp)
 /(\.mysmtp\.mobi)$/ REJECT Bad reputation (mysmtp)
 /(\.mysmtp\d+\.com)$/ REJECT Bad reputation (mysmtp)
-/^\d{1,3}\.ip-\d{1,3}-\d{1,3}-\d{1,3}\.eu$/ REJECT Dynamic - Please relay via ISP (.eu)
+/\d{1,3}\.ip-\d{1,3}-\d{1,3}-\d{1,3}\.eu$/ REJECT Dynamic - Please relay via ISP (.eu)
