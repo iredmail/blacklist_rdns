@@ -26,6 +26,9 @@
 #if /[0-9]{4}|[0-9]+[^0-9]+[0-9]+|dhcp|dynamic|pppoe|wireless/
 #if /^doc|cable|dhcp|dial|din|dsl|dyn|pool|ppp|wireless/
 
+/\.dhcp\./ REJECT Dynamic - Please relay via ISP (dhcp)
+/\d{1,3}x\d{1,3}x\d{1,3}x\d{1,3}/ REJECT Dynamic - Please relay via ISP (xxxx)
+
 #
 # Vietnam
 #
@@ -469,7 +472,6 @@
 /^user(-[12]?[0-9]{1,2}){4}\.play-internet\.pl$/ REJECT Generic - Please relay via ISP (play-internet.pl)
 /^([012]?[0-9]{1,3}){4}\.[a-z-]{4,60}\.vectranet\.pl$/ REJECT  Generic - Please relay via ISP (vectranet.pl)
 /^[12]?[0-9]{1,2}(-[12]?[0-9]{1,2}){3}\.ip\.netia\.com\.pl$/ REJECT Generic - Please relay via ISP (netia.com.pl)
-/\.dhcp\.adsl\.tpnet\.pl$/  REJECT Dynamic - Please relay via ISP (tpnet.pl)
 /^apn(-[12]?[0-9]{1,2}){4}\.dynamic\.gprs\.plus\.pl$/ REJECT Dynamic - Please relay via ISP (plus.pl)
 /^(\d{1,3}-){3}\d{1,3}\.dynamic\.chello\.pl$/   REJECT  Dynamic - Please relay via ISP (chello.pl)
 /^dynamic(-[0-9]{1,3}){4}\.ssp\.dialog\.net\.pl$/ REJECT Dynamic - Please relay via ISP (dialog.net.pl)
@@ -495,7 +497,6 @@
 /^([12]?[0-9]{1,2}\.){4}biu-dynamic\.barak-online\.net$/ REJECT Dynamic - Please relay via ISP (barak-online.net)
 /^dynamic\.ip\.([12]?[0-9]{1,2}\.){4}batelco\.com\.bh$/ REJECT Dynamic - Please relay via ISP (batelco.com.bh)
 /^dhcp(-[12]?[0-9]{1,2}){4}\.bhfc\.net$/ REJECT Dynamic - Please relay via ISP (bhfc.net)
-/^c[0-9a-f]{8}\.dhcp\.bluecom\.no$/ REJECT Dynamic - Please relay via ISP (bluecom.no)
 /^dynamic-ip-[a-z]{0,4}[0-9]{4,12}\.cable\.net\.co$/ REJECT Dynamic - Please relay via ISP (cable.net.co)
 /^[12]?[0-9]{1,2}(-[12]?[0-9]{1,2}){3}(\.[0-9]{10})?\.ddns\.cablebg\.net$/ REJECT Dynamic - Please relay via ISP (cablebg.net)
 /^cm(-[12]?[0-9]{1,2}){4}\.cpe-dynamic\.cableonda\.net$/ REJECT Dynamic - Please relay via ISP (cableonda.net)
@@ -506,7 +507,6 @@
 /^dynamic(-[12]?[0-9]{1,2}){4}\.dsl\.cavtel\.net$/ REJECT Dynamic - Please relay via ISP (cavtel.net)
 /^doc(-[12]?[0-9]{1,2}){4}\.[a-z]{3,8}\.[a-z]{2}\.cebridge\.net$/ REJECT Dynamic - Please relay via ISP (cebridge.net)
 /\.dyn\.centurytel\.net$/  REJECT Dynamic - Please relay via ISP (centurytel.net)
-/^([12]?[0-9]{1,2}-){3}[0-9]{1,3}\.dhcp\.([a-z]{2,5}\.)?[a-z]{2}\.charter\.com$/ REJECT Dynamic - Please relay via ISP (charter.com)
 /^dhcp(-[0-9]{3}){4}\.chello\.nl$/ REJECT Dynamic - Please relay via ISP (chello.nl)
 /^([12]?[0-9]{1,2}\.){4}broad\.([a-z]{2}\.){2}dynamic\.cndata\.com$/ REJECT Dynamic - Please relay via ISP (cndata.com)
 /^([12]?[0-9]{1,2}\.){4}broad\.dynamic\.([a-z]{2}\.){2}cndata\.com$/ REJECT Dynamic - Please relay via ISP (cndata.com)
@@ -532,7 +532,6 @@
 /^([12]?[0-9]{1,2}\.){4}dynamic\.rev\.eftel\.com$/ REJECT Dynamic - Please relay via ISP (eftel.com)
 /^([12]?[0-9]{1,2}-){4}dynamic\.b-ras[0-9]\.[a-z]{3}\.[a-z]{3,12}\.eircom\.net$/ REJECT Dynamic - Please relay via ISP (eircom.net)
 /\.dyn\.embarqhsd\.net$/  REJECT Dynamic - Please relay via ISP (embarqhsd.net)
-/^[a-z]{2}(-[12]?[0-9]{1,2}){4}\.dhcp\.embarqhsd\.net$/ REJECT Dynamic - Please relay via ISP (embarqhsd.net)
 /^dinamic_adsl_([12]?[0-9]{1,2}-){2}[12]?[0-9]{1,2}\.emcali\.net\.co$/ REJECT Dynamic - Please relay via ISP (emcali.net.co)
 /^dinamic_adsl_[12]?[0-9]{1,2}-[12]?[0-9]{1,2}\.emcali\.net\.co$/ REJECT Dynamic - Please relay via ISP (emcali.net.co)
 /^dynamic(-[0-9]{1,3}){4}\.entelnet.bo$/ REJECT Dynamic - Please relay via ISP (entelnet.bo)
@@ -561,7 +560,6 @@
 /^dhcp(-[12]?[0-9]{1,2}){3}\.in2cable\.com$/ REJECT Dynamic - Please relay via ISP (in2cable.com)
 /\.dynamic(-[a-z]{2,5})?\.adsl-line\.inode\.at$/ REJECT Dynamic - Please relay via ISP (inode.at)
 /^[12]?[0-9]{1,2}(-[12]?[0-9]{1,2}){3}\.dynamic\.xdsl-line\.inode\.at$/ REJECT Dynamic - Please relay via ISP (inode.at)
-/^([12]?[0-9]{1,2}-){3}[12]?[0-9]{1,2}\.dhcp\.insightbb\.com$/ REJECT Dynamic - Please relay via ISP (insightbb.com)
 /^cablelink[12]?[0-9]{1,2}-[12]?[0-9]{1,2}\.telefonia\.intercable\.net$/ REJECT Dynamic - Please relay via ISP (intercable.net)
 /^ic-dinamica(-[12]?[0-9]{1,2}){4}\.intercable\.net\.co$/ REJECT Dynamic - Please relay via ISP (intercable.net.co)
 /^[12]?[0-9]{1,2}(-[12]?[0-9]{1,2}){3}\.dhcp-ripwave\.irishbroadband\.ie$/ REJECT Dynamic - Please relay via ISP (irishbroadband.ie)
@@ -619,7 +617,6 @@
 /^[12]?[0-9]{1,2}(-[12]?[0-9]{1,2}){3}\.dsl\.dynamic\.simnet\.is$/ REJECT Dynamic - Please relay via ISP (simnet.is)
 /^bsn(-[12]?[0-9]{1,2}){3}\.dial-up\.dsl\.siol\.net$/ REJECT Dynamic - Please relay via ISP (siol.net)
 /^ppp(-[12]?[0-9]{1,2}){4}\.pe1-dynamic\.solo\.by$/ REJECT Dynamic - Please relay via ISP (solo.by)
-/^cm(-[12]?[0-9]{1,2}){4}\.dhcp\.southerncoastalcable\.net$/ REJECT Dynamic - Please relay via ISP (southerncoastalcable.net)
 /^[12]?[0-9]{1,2}(-[12]?[0-9]{1,2}){3}\.pools\.spcsdns\.net$/ REJECT Dynamic - Please relay via ISP (spcsdns.net)
 /^[a-z]{2}(-[12]?[0-9]{1,2}){4}\.dyn\.sprint-hsd\.net$/ REJECT Dynamic - Please relay via ISP (sprint-hsd.net)
 /^dyn[0-9](-[12]?[0-9]{1,2}){4}\.[a-z]{3,10}\.suomi\.net$/ REJECT Dynamic - Please relay via ISP (suomi.net)
@@ -671,7 +668,6 @@
 /^dynamic-.*\.zoominternet.net$/ REJECT Dynamic - Please relay via ISP (zoominternet.net)
 /^([12]?[0-9]{1,2}\.){4}((dial\.dynamic)|(dynamic\.dsl))\.[a-z]{3}[0-9]{2}-[a-z]{4}-[a-z]{3}\.comindico\.com\.au$/ REJECT Dynamic - Please relay via ISP (comindico.com.au)
 /^0x[0-9a-f]{8}\.kd[0-9]nxx[0-9]{1,2}\.((adsl-dhcp)|(dynamic\.dsl))\.tele\.dk$/ REJECT Dynamic - Please relay via ISP (tele.dk)
-/^[0-9]{9}\.dhcp\.dbnet\.dk$/ REJECT Dynamic - Please relay via ISP (dbnet.dk)
 /^[012][0-9]{2}(-[0-9]{3}){3}\.dyn\.adsl\.xs4all\.be$/ REJECT Dynamic - Please relay via ISP (xs4all.be)
 /^[012][0-9]{2}(-[0-9]{3}){3}\.dyn\.one\.at$/ REJECT Dynamic - Please relay via ISP (one.at)
 /^[012][0-9]{2}(-[0-9]{3}){3}\.dyn\.orange\.at$/ REJECT Dynamic - Please relay via ISP (orange.at)
@@ -679,7 +675,6 @@
 /^[12]?[0-9]{1,2}(-[12]?[0-9]{1,2}){3}\.adsl\.dyn\.setardsl\.aw$/ REJECT Dynamic - Please relay via ISP (setardsl.aw)
 /^[12]?[0-9]{1,2}(-[12]?[0-9]{1,2}){3}\.cable\.dyn\.cablevision.net.mx$/ REJECT Dynamic - Please relay via ISP (cablevision.net.mx)
 /^[12]?[0-9]{1,2}(\.[12]?[0-9]{1,2}){2}-[12]?[0-9]{1,2}\.dynamic\.tttmaxnet\.com$/ REJECT Dynamic - Please relay via ISP (tttmaxnet.com)
-/^[12]?[0-9]{1,2}-[12]?[0-9]{1,2}\.((dsl-res)|(res-dsl))\.dhcp\.transact\.bm$/ REJECT Dynamic - Please relay via ISP (transact.bm)
 /^[a-z]{0,10}dhcp-[12]?[0-9]{1,2}\.[12]?[0-9]{1,2}(-[12]?[0-9]{1,2}){2}\.iw\.net$/ REJECT Dynamic - Please relay via ISP (iw.net)
 /^broadband-dynamic-central[0-9]{2,6}\.connect\.com\.fj$/ REJECT Dynamic - Please relay via ISP (connect.com.fj)
 /^cust\.dyn\.12]?[0-9]{1,2}(-[12]?[0-9]{1,2}){3}\.cybernet\.ch$/ REJECT Dynamic - Please relay via ISP (cybernet.ch)
@@ -1656,3 +1651,4 @@
 /(\.mysmtp\.mobi)$/ REJECT Bad reputation (mysmtp)
 /(\.mysmtp\d+\.com)$/ REJECT Bad reputation (mysmtp)
 /\d{1,3}\.ip-\d{1,3}-\d{1,3}-\d{1,3}\.eu$/ REJECT Dynamic - Please relay via ISP (.eu)
+/\d{1,3}\.ip-\d{1,3}-\d{1,3}-\d{1,3}\.net$/ REJECT Dynamic - Please relay via ISP (.net)
